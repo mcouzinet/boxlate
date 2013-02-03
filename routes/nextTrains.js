@@ -1,6 +1,5 @@
 var http = require('http');
 
-
 exports.index = function(req, res){
   var stops = req.query['metro'],
       nexts = [],
