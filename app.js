@@ -41,6 +41,7 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/getJSON', function(req, res, next){
+  req.setEncoding('utf8');
   var nexts = [],
       extremes = {
         "M1" : ['la%20defense', 'chateau%20de%20vincennes'],
@@ -91,8 +92,23 @@ var stopsLength = 1;
       http.get(options, function(result) {
         result.on("data", function(chunk) {
           a++;
-          toReturn['destination'+a] = thisExtremes[a-1];
-          toReturn['time'+a] = JSON.parse(chunk)[0].steps[0].time;
+          var date = new Date(),
+              current_hour = date.getHours(),
+              current_minutes = date.getMinutes(),
+              trainTime = JSON.parse(chunk)[0].steps[0].time,
+              train_hour = trainTime.split(':')[0],
+              train_minutes = trainTime.split(':')[1];
+          if(current_hour == train_hour ){
+            difference = train_minutes - current_minutes;
+          } else {
+            difference = Math.abs(train_minutes - current_minutes + 60);
+          }
+          if(difference > 5) { toReturn['coulor'+a] = 1 }
+          else if(difference < 1) { toReturn['coulor'+a] = 3 }
+          else if(difference < 5 && difference > 1) { toReturn['coulor'+a] = 2 }
+          // else {}
+          toReturn['destination'+a] = thisExtremes[a-1].replace(/%20/gi, ' ');
+          toReturn['time'+a] = trainTime;
           //console.log(chunk);
           if( a == 2 ){
             console.log("OKOKOKOKOKOKKOO");
