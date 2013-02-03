@@ -96,9 +96,7 @@ var stopsLength = 1;
           //console.log(chunk);
           if( a == 2 ){
             console.log("OKOKOKOKOKOKKOO");
-            res.json({
-              nexts: toReturn
-            });
+            res.json(toReturn);
           }
         });
       }).on('error', function(e) {
