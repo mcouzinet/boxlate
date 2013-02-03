@@ -103,9 +103,9 @@ var stopsLength = 1;
           } else {
             difference = Math.abs(train_minutes - current_minutes + 60);
           }
-          if(difference > 5) { toReturn['coulor'+a] = 1 }
-          else if(difference < 1) { toReturn['coulor'+a] = 3 }
-          else if(difference < 5 && difference > 1) { toReturn['coulor'+a] = 2 }
+          if(difference > 5) { toReturn['color'+a] = 1 }
+          else if(difference < 1) { toReturn['color'+a] = 3 }
+          else if(difference < 5 && difference > 1) { toReturn['color'+a] = 2 }
           // else {}
           toReturn['destination'+a] = thisExtremes[a-1].replace(/%20/gi, ' ');
           toReturn['time'+a] = trainTime;
