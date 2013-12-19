@@ -1,0 +1,8 @@
+1. Start the script
+
+C:\Python27\python.exe parikstra-interface.py
+
+> The server is started on localhost:8080.
+
+2. Request on http://localhost:8080/ in GET.
+

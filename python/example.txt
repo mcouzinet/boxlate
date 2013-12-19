@@ -1,0 +1,75 @@
+$ curl "http://localhost:8080/?from=bourse&to=nation&walk_speed=bad&date=1360911600&without_transport=metro"
+
+[
+   {
+      "steps" : [
+         {
+            "direction" : "H�tel de Ville",
+            "time" : "08:00",
+            "name" : "REAUMUR-MONTMARTRE, Paris",
+            "type" : "departure",
+            "line" : [
+               "Bus",
+               "74"
+            ]
+         },
+         {
+            "time" : "08:06",
+            "wait" : 360,
+            "name" : "CHATELET, Paris",
+            "walk" : 420,
+            "type" : "step"
+         },
+         {
+            "direction" : "GARE DE TORCY MARNE LA VALLEE",
+            "time" : "08:19",
+            "name" : "CHATELET LES HALLES, Paris",
+            "type" : "step",
+            "line" : [
+               "RER",
+               "A"
+            ]
+         },
+         {
+            "direction" : null,
+            "time" : "08:25",
+            "name" : "NATION, Paris",
+            "type" : "arrival",
+            "line" : null
+         }
+      ],
+      "type" : "Trajet arriv�e au plus t�t",
+      "duration" : 1500
+   },
+   {
+      "steps" : [
+         {
+            "direction" : "MONTEMPOIVRE",
+            "time" : "08:01",
+            "name" : "BOURSE, Paris",
+            "type" : "departure",
+            "line" : [
+               "Bus",
+               "29"
+            ]
+         },
+         {
+            "time" : "08:36",
+            "wait" : null,
+            "name" : "FABRE D'EGLANTINE, Paris",
+            "walk" : 420,
+            "type" : "step"
+         },
+         {
+            "direction" : null,
+            "time" : "08:43",
+            "name" : "NATION, Paris",
+            "type" : "arrival",
+            "line" : null
+         }
+      ],
+      "type" : "Trajet le moins de correspondances",
+      "duration" : 2520
+   }
+]
+
